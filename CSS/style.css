@@ -1,0 +1,479 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --contentBox: #D9D9D9;
+    --buttonColor: #0a0649;
+    --backgroundColor: #fff;
+    --primaryFontColor: #000;
+    --boxShadow: rgb(168, 150, 150);
+    --activitiesBackground: #d2d2e2;
+
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: var(--bgColor);
+}
+
+
+/* --------Navigation Section(open)-------  */
+
+#navigation {
+    height: 8vh;
+    width: 100%;
+    background-color: var(--contentBox);
+    box-shadow: 0 2px 10px 0 var(--boxShadow);
+    position: fixed;
+    z-index: 10;
+}
+
+/* <!-- -----Left Hand Navigation (opened) ----  --> */
+.logo {
+    margin-left: 35px;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: var(--buttonColor);
+    margin-right: 30px;
+}
+/* <!-- -----Left Hand Navigation(closed) ------  --> */
+
+/* <!-- ------ Center Nav Links (opened) ------  --> */
+.navlinks {
+    width: 50%;
+}
+.navlinks li {
+    list-style: none;
+}
+.navlinks a {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--primaryFontColor);
+    padding: 8px 10px;
+    border-radius: 5px;
+    position: relative;
+}
+.navlinks a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    background-color: var(--buttonColor);
+    border-radius: 10px;
+    opacity: 0;
+    transition: 1s;
+}
+.navlinks a:hover:before, .checked a::before{
+    opacity: 1;
+}
+/* <!-- ------ Center Nav Links (closed) ------  --> */
+
+/* <!-- ------- Right Profile (opened)-------  --> */
+.rightNav {
+    width: 25%;
+    justify-content: space-around;
+}
+
+.search{
+    height: 30px;
+    width: 210px;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+}
+.search input{
+    border: none;
+    height: 30px;
+    padding: 0 0 0 10px;
+    font-size: 16px;
+    font-weight: 600;
+    width: 180px;
+    border-radius: 10px 0 0 10px;
+}
+.search input:focus{
+    outline: none;
+}
+.search i{
+    height: 30px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--backgroundColor);
+    border-radius: 0px 10px 10px 0px;
+    cursor: pointer;
+    color: var(--buttonColor);
+    transition: .5s;
+}
+.search i:hover{
+    background-color: var(--contentBox);
+}
+
+.profile img {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 0 var(--boxShadow);
+}
+/* <!-- ------- Right Profile (closed)-------  --> */
+
+/* --------Navigation Section(closed)-------  */
+
+
+
+
+/* <!-- ----- home Navigaion (open) ----- --> */
+
+#home{
+    /* height: 100vh; */
+    width: 100%;
+    background-color: var(--backgroundColor);
+    position:relative;
+    top: 12vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* ------ Left Home fixed Nav (open) ------ */
+#leftHomeFixedNav{
+    height: 83vh;
+    width: 15%;
+    border-radius: 0 10px 10px 0;
+    background-color: var(--contentBox);
+    position: fixed;
+    box-shadow: 0 0 10px 0 var(--boxShadow);
+}
+
+.leftHomeNav ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 80vh;
+}
+.leftHomeNav li{
+    list-style: none;
+    margin-left: 20px;
+
+}
+.leftHomeNav a{    
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--primaryFontColor);
+    padding: 8px 5px;
+    border-radius: 5px;
+    position: relative;
+}
+.leftHomeNav a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    background-color: var(--buttonColor);
+    border-radius: 10px;
+    opacity: 0;
+    transition: 1s;
+}
+.leftHomeNav a:hover:before{
+    opacity: 1;
+}
+/* ------ Left Home fixed Nav (closed) ------ */
+
+
+
+ /* ---- center Home fixed Nav (opened) ---- */ 
+#centerHomeFixedNav{
+    width: 50%;
+    left: 20%;
+    position: absolute;
+}
+#postSection{
+    height: 8vh;
+    background-color: var(--contentBox);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.centerHomeNav{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.centerHomeNav input{
+    height: 70%;
+    width: 70%;
+    margin: 0 10px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    font-size: 17px;
+}
+
+#postBtn{
+    background-color: var(--buttonColor);
+    color: white;
+    transition: .5s;
+    padding: 6px 15px;
+}
+#postBtn:hover{
+    background-color: black;
+    color: var(--backgroundColor);
+}
+#feelings{
+    color: var(--buttonColor);
+    border: 2px solid var(--buttonColor);
+    transition: .5s;
+}
+#feelings:hover{
+    background-color: rgb(0, 0, 0);
+    color: white;
+
+}
+button{
+    font-size: 17px;
+    background-color: white;
+    margin: 0 10px;
+    padding: 4px 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+
+ /* ----- Main content (opened) ------ */
+ 
+#maincontent{
+    margin: 30px 0;
+    background-color: var(--contentBox);
+    /* height: 300px; */
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+}
+.contents{
+    padding:20px 20px;
+}
+#postTop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.rightside{
+    display: flex;
+    align-items: center;
+}
+#hamburgerSmall{
+    height: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.hamElements{
+    position: absolute;
+    right: 20px;
+    margin-top: 150px;
+    height: 100px;
+    width: 100px;
+    background-color: black;
+    border-radius: 10px;
+    display: none;
+}
+.contentBtn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+}
+.btn{
+    height: 5px;
+    width: 5px;
+    background-color: yellow;
+    background-color: black;
+    border-radius: 50%;
+    margin: 1px;
+}
+.profilePhoto img{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+#profilename{
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--buttonColor);
+}
+
+#mainpost{
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px 25px;
+    margin: 20px 0;
+}
+
+.contents p, i{
+    font-size: 18px;
+    text-align: justify;
+    cursor: pointer;
+}
+
+#ContentAcivities{
+    margin-top: 10px;
+    background-color: var(--activitiesBackground);
+    display: flex;
+    justify-content: space-around;
+    border-radius: 5px;
+    height: 40px;
+}
+.flex{
+    display: flex;
+    align-items: center;
+}
+.flex i{
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+/* ----- Main content (closed) ------ */
+
+#EndPost{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin: 20px;
+    font-weight: 600;
+    padding-bottom: 50px;
+}
+
+/* ---- center Home fixed Nav (closed) ---- */
+
+
+/* ---- Right Home fixed Nav (opened) ----   */
+
+#rightHomeFixedNav{
+    position: fixed;
+    right: 15px;
+    width: 20%;
+    height: 380px;
+    border-radius: 10px;
+}
+
+.rightHomeNav{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    overflow:hidden;
+}
+.coverphoto img{
+    height: 100%;
+    width: 100%;
+}
+.profileContent{
+    height: 260px;
+    width: 100%;
+    position:absolute;
+    bottom: 0;
+    background-color: var(--contentBox);
+    border-radius: 0 0px 10px 10px;
+}
+.profilePhotoHome{
+    margin-top: -35px ;
+    display: flex;
+    justify-content: center;
+}
+.profilePhotoHome img{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    box-shadow: 0 0px 0px 3px var(--contentBox);
+}
+.UserName{
+    text-align: center;
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--buttonColor);
+    font-size: 20px;
+    font-weight: 600;
+}
+.UserDiscription{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+    padding: 5px 15px;
+}
+
+.totalAchivements{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0 20px;
+}
+.totalAchivements i{
+    font-size: 22px;
+    padding: 5px 0;
+}
+.totalAchivements p{
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: -2px;
+
+}
+
+#LogOut{
+    background-color: var(--buttonColor);
+    color: white;
+    margin-top: 10px;
+}
+
+.button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+
+.buttonForHelp{
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#instentHelp{
+    background-color: var(--buttonColor);
+    color: white;
+    padding: 10px 15px;
+}
+
+
+footer{
+    text-align: center;
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: var(--buttonColor);
+
+}
+/* ---- Right Home fixed Nav (closed) ----   */
